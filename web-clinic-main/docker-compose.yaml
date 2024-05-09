@@ -1,0 +1,46 @@
+version: '3.9'
+name: web_clinic
+services:
+  web:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+    ports:
+      - "4000:80"
+    volumes:
+      - web_data_clinic:/var/www/html
+      - ./src:/var/www/html
+      - ./default.conf/default.conf:/etc/nginx/conf.d/default.conf
+      - ./default.conf/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      web_clinic_network:
+        ipv4_address: 192.168.40.2
+
+  php:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      web_clinic_network:
+        ipv4_address: 192.168.40.3
+
+
+networks:
+  web_clinic_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.40.0/24
+
+volumes:
+  web_data_clinic:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/var/www/html'
+

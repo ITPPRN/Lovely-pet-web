@@ -1,0 +1,22 @@
+FROM php:8-fpm
+
+
+# คัดลอกไฟล์เนื้อหาของโค้ดของเว็บไซต์ไปยัง /var/www/html
+
+COPY . .
+
+# ติดตั้ง PDO driver 
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Install required dependencies for GD extension
+RUN apt-get update && apt-get install -y \
+    libjpeg-dev \
+    libpng-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Configure and install GD extension
+RUN docker-php-ext-configure gd --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd
+
+# Set permissions for /var/www/html (use chmod)
+RUN chmod -R 777 /var/www/html

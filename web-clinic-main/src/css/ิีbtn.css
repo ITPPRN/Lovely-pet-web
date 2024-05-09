@@ -1,0 +1,4 @@
+.btn-inline {
+    float: left;
+    margin-right: 10px; /* ปรับค่า margin-right ตามต้องการ */
+  }

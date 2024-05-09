@@ -1,0 +1,35 @@
+
+body {
+    background-image: url('../image/backgroud.jpg'); /* แทน path_to_your_image.jpg ด้วยที่อยู่ของไฟล์ภาพพื้นหลังของคุณ */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.navbar{
+    background-color: #FFB800;
+    padding-top: 20px;
+}
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh; /* กำหนดความสูงของการ์ดให้เท่ากับความสูงของหน้าจอ */
+  }
+  .yellow-bg {
+    background-color: rgba(252, 185, 0, 0.4); /* สีเหลืองโปร่งแสง */
+  }
+  
+  .from {
+    background-color: rgb(189, 145, 0); /* สีเหลืองโปร่งแสง */
+  }
+
+
+  .yellow-bg2{
+    background-color: rgba(252, 185, 0, 0.877); /* สีเหลืองโปร่งแสง */
+  }
+
+  main {
+    margin-top: 50px; /* กำหนดระยะห่างด้านบนของ main element เป็น 50px */
+}

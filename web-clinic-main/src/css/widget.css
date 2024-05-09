@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #fcb900;
+}
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    /* กำหนดความสูงของการ์ดให้เท่ากับความสูงของหน้าจอ */
+    opacity: 0; /* ทำให้ element ทั้งหมดใส */
+    border-radius: 10px;
+}
+
+.center-card2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    /* กำหนดความสูงของการ์ดให้เท่ากับความสูงของหน้าจอ */
+    width: 500px;
+    /* กำหนดความกว้างของการ์ด */
+    border-radius: 10px;
+    /* กำหนดขอบมนของการ์ด */
+}

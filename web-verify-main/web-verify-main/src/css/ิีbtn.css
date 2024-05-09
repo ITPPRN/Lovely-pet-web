@@ -1,0 +1,47 @@
+.btn-inline {
+  float: left;
+  margin-right: 10px;
+  /* ปรับค่า margin-right ตามต้องการ */
+}
+
+.custom-button {
+  background-color: #FFB800;
+  /* สีพื้นหลัง */
+  border: none;
+  color: #FFFFFF;
+  /* สีข้อความ */
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 300%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.5s;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.custom-button:hover:before {
+  width: 0;
+  height: 0;
+}
+
+.custom-button span {
+  position: relative;
+  z-index: 3;
+}
